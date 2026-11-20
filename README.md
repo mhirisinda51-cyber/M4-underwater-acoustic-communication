@@ -2,32 +2,48 @@
 
 ## 1. Introducción
 
-La comunicación bajo el agua es uno de los retos que encontramos al trabajar con vehículos submarinos autónomos (AUV) y vehículos operados remotamente (ROV). A diferencia de las comunicaciones habituales por radio, bajo el agua se utilizan principalmente ondas acústicas. Su funcionamiento depende de factores como la distancia, la frecuencia y el ruido del entorno.
+La comunicación es uno de los aspectos más importantes en el desarrollo de vehículos submarinos, tanto autónomos (AUV) como operados remotamente (ROV). Permite transmitir información entre el vehículo y la estación de superficie, como datos de sensores, información de navegación y órdenes de control.
 
-En este proyecto se estudiará cómo se comporta la comunicación acústica submarina mediante un modelo desarrollado en Python. El objetivo es analizar sus principales limitaciones y conocer qué prestaciones se pueden conseguir en diferentes condiciones.
+Sin embargo, las comunicaciones bajo el agua presentan dificultades diferentes a las de los sistemas convencionales. Las ondas de radio tienen muchas limitaciones en este entorno, por lo que las ondas acústicas se utilizan habitualmente para transmitir información a través del agua.
 
-## 2. Objetivos
+El objetivo de este proyecto es estudiar el comportamiento de las comunicaciones acústicas submarinas mediante un modelo desarrollado en Python. Se analizarán factores como la distancia, la frecuencia, la atenuación, el ruido y la capacidad de transmisión, con el fin de comprender qué prestaciones se pueden conseguir en diferentes condiciones.
 
-El trabajo se centrará en los siguientes aspectos:
+## 2. Motivación y experiencia previa
 
-- Estudiar la absorción acústica del agua utilizando la fórmula de Thorp.
-- Analizar las pérdidas de propagación según la distancia y la frecuencia.
+Este trabajo también está relacionado con mi experiencia anterior en el desarrollo de un vehículo submarino operado remotamente (ROV) durante mi estancia en la USC.
+
+En aquel proyecto trabajé en el desarrollo de una plataforma submarina que integraba diferentes sistemas electrónicos y de control, entre ellos Raspberry Pi 4, Pixhawk 6C y ArduSub.
+
+La arquitectura de comunicación utilizaba una conexión Ethernet mediante un cable tether entre el vehículo y la estación de superficie. También se utilizaron MAVLink para el intercambio de datos de control y telemetría, y WebRTC para la transmisión de vídeo.
+
+Esta experiencia me permitió conocer algunos de los retos relacionados con la comunicación y el control de vehículos submarinos.
+
+A partir de este trabajo surge el interés por estudiar otra alternativa de comunicación: la transmisión acústica bajo el agua. En este proyecto se analizará su comportamiento y se estudiarán sus posibilidades de aplicación en sistemas AUV y ROV.
+
+## 3. Objetivos del proyecto
+
+Los principales objetivos son:
+
+- Estudiar la absorción acústica del agua mediante la fórmula de Thorp.
+- Analizar las pérdidas de propagación en función de la distancia y la frecuencia.
 - Modelar el ruido ambiente y calcular la relación señal-ruido (SNR).
-- Estimar la capacidad del canal mediante la fórmula de Shannon.
+- Estimar la capacidad teórica del canal utilizando la fórmula de Shannon.
 - Comparar diferentes técnicas de modulación.
-- Analizar la relación entre el alcance y la tasa de datos.
+- Analizar la relación entre el alcance de comunicación y la tasa de datos.
 - Calcular la latencia de propagación de las señales acústicas.
-- Comparar los resultados con las especificaciones de módems acústicos comerciales.
+- Contrastar los resultados obtenidos con las especificaciones de módems acústicos comerciales.
 
-## 3. Metodología
+## 4. Metodología
 
-Primero se estudiará el comportamiento de la absorción acústica en función de la frecuencia. Después se desarrollará un modelo de propagación para diferentes distancias y se tendrán en cuenta los efectos del ruido ambiente.
+El trabajo se desarrollará progresivamente mediante simulaciones y análisis en Python.
 
-A partir de estos resultados se calculará la SNR y se estimará la capacidad teórica del canal. Finalmente, se compararán diferentes técnicas de modulación y se analizará cómo varía el alcance en función de la tasa de transmisión.
+En primer lugar, se estudiará la absorción acústica utilizando la fórmula de Thorp. A continuación, se modelarán las pérdidas de propagación para diferentes distancias y frecuencias.
 
-Los resultados se representarán mediante gráficas y se contrastarán con las especificaciones técnicas de equipos comerciales.
+Después se incorporará el efecto del ruido ambiente para calcular la relación señal-ruido (SNR). A partir de estos resultados se estimará la capacidad teórica del canal mediante la fórmula de Shannon.
 
-## 4. Herramientas
+También se compararán diferentes técnicas de modulación y se estudiará cómo varía la tasa de transmisión con la distancia. Finalmente, se analizará la latencia de propagación y se contrastarán los resultados con datos técnicos publicados de módems acústicos comerciales.
+
+## 5. Herramientas utilizadas
 
 - Python
 - NumPy
@@ -36,26 +52,29 @@ Los resultados se representarán mediante gráficas y se contrastarán con las e
 - Jupyter Notebook
 - Git y GitHub
 
-## 5. Organización del repositorio
+## 6. Organización del repositorio
 
-- `data/`: datos y parámetros utilizados en el modelo.
-- `src/`: código Python del proyecto.
-- `notebooks/`: pruebas, cálculos y análisis.
-- `docs/`: documentación, referencias y memoria final.
+- `data/`: datos y parámetros utilizados en las simulaciones.
+- `src/`: código fuente del modelo de comunicación.
+- `notebooks/`: cálculos, pruebas, experimentos y análisis.
+- `docs/`: documentación, referencias y memoria del proyecto.
+- `previous_rov_project/`: material seleccionado del proyecto ROV anterior, utilizado como contexto de aplicación.
 
-## 6. Resultados esperados
+## 7. Resultados esperados
 
-Se espera obtener un modelo que permita estudiar las prestaciones de una comunicación acústica submarina para diferentes distancias y frecuencias.
+Se espera desarrollar un modelo parametrizable que permita estudiar las prestaciones de una comunicación acústica submarina en diferentes condiciones.
 
-También se elaborarán gráficas para visualizar las pérdidas de propagación, la relación señal-ruido y la tasa de datos alcanzable. A partir de los resultados se identificarán las condiciones de comunicación más adecuadas para diferentes aplicaciones con AUV y ROV.
+Los resultados incluirán gráficas de absorción, pérdidas de propagación, SNR y capacidad del canal, así como comparaciones entre distancia y tasa de datos.
 
-## 7. Estado del proyecto
+A partir de estos resultados se intentará identificar las condiciones de comunicación más adecuadas para distintas aplicaciones submarinas, teniendo en cuenta las limitaciones de alcance, velocidad de transmisión y latencia.
+
+## 8. Estado del proyecto
 
 Proyecto en desarrollo.
 
-## 8. Referencias iniciales
+## 9. Referencias iniciales
 
-- Zia, M. Y. I., Poncela, J. y Otero, P. (2021). *State-of-the-art underwater acoustic communication modems: Classifications, analyses and design challenges*. Wireless Personal Communications, 116, 1325–1360. https://doi.org/10.1007/s11277-020-07431-x
+- Zia, M. Y. I., Poncela, J. y Otero, P. (2021). *State-of-the-art underwater acoustic communication modems: Classifications, analyses and design challenges*. Wireless Personal Communications, 116(2), 1325–1360. https://doi.org/10.1007/s11277-020-07431-x
 
 - Stojanovic, M. (2006). *On the relationship between capacity and distance in an underwater acoustic communication channel*. Proceedings of WUWNet '06. https://doi.org/10.1145/1161039.1161049
 
