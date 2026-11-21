@@ -78,7 +78,25 @@ Proyecto en desarrollo.
 
 - Stojanovic, M. (2006). *On the relationship between capacity and distance in an underwater acoustic communication channel*. Proceedings of WUWNet '06. https://doi.org/10.1145/1161039.1161049
 
----
+## 10. Cómo ejecutar el modelo
+
+Desde la carpeta raíz del repositorio, activa el entorno virtual y ejecuta los scripts:
+
+```bat
+.venv\Scripts\activate
+py src\plot_thorp.py
+py src\plot_propagation_loss.py
+py src\plot_snr.py
+py src\plot_capacity.py
+py src\propagation_delay.py
+py src\modulation_comparison.py
+
+Then save it with **Ctrl + S** and run:
+
+```bat
+git add README.md
+git commit -m "Add instructions to run project scripts"
+git push
 
 **Máster en Vehículos Autónomos (MuVA)**  
 Proyecto individual – M4
