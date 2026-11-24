@@ -36,21 +36,17 @@ Los principales objetivos son:
 
 ## 4. Metodología
 
-El trabajo se desarrollará progresivamente mediante simulaciones y análisis en Python.
+El modelo se ha desarrollado en Python mediante una serie de scripts que permiten estudiar la comunicación acústica submarina.
 
-En primer lugar, se estudiará la absorción acústica utilizando la fórmula de Thorp. A continuación, se modelarán las pérdidas de propagación para diferentes distancias y frecuencias.
+Primero, se ha calculado la absorción acústica mediante la fórmula de Thorp y se han estimado las pérdidas de propagación para distintas distancias y frecuencias. Después, se ha calculado la relación señal-ruido (SNR) y se ha estimado la capacidad teórica del canal mediante la fórmula de Shannon.
 
-Después se incorporará el efecto del ruido ambiente para calcular la relación señal-ruido (SNR). A partir de estos resultados se estimará la capacidad teórica del canal mediante la fórmula de Shannon.
-
-También se compararán diferentes técnicas de modulación y se estudiará cómo varía la tasa de transmisión con la distancia. Finalmente, se analizará la latencia de propagación y se contrastarán los resultados con datos técnicos publicados de módems acústicos comerciales.
+También se han comparado distintas modulaciones y se ha calculado la latencia de propagación. Finalmente, los resultados se han contrastado cualitativamente con especificaciones publicadas de módems acústicos comerciales.
 
 ## 5. Herramientas utilizadas
 
 - Python
 - NumPy
-- SciPy
 - Matplotlib
-- Jupyter Notebook
 - Git y GitHub
 
 ## 6. Organización del repositorio
@@ -61,17 +57,17 @@ También se compararán diferentes técnicas de modulación y se estudiará cóm
 - `docs/`: documentación, referencias y memoria del proyecto.
 - `previous_rov_project/`: material seleccionado del proyecto ROV anterior, utilizado como contexto de aplicación.
 
-## 7. Resultados esperados
+## 7. Resultados
 
-Se espera desarrollar un modelo parametrizable que permita estudiar las prestaciones de una comunicación acústica submarina en diferentes condiciones.
+El modelo permite analizar cómo la distancia y la frecuencia afectan a la comunicación acústica submarina. Se han generado gráficas de pérdidas de propagación, SNR y capacidad teórica del canal, además de comparaciones entre distancia y tasa de datos.
 
-Los resultados incluirán gráficas de absorción, pérdidas de propagación, SNR y capacidad del canal, así como comparaciones entre distancia y tasa de datos.
+Los resultados muestran el compromiso entre alcance y tasa de transmisión. También se ha considerado la latencia de propagación y se han contextualizado las estimaciones mediante una comparación cualitativa con módems acústicos comerciales.
 
-A partir de estos resultados se intentará identificar las condiciones de comunicación más adecuadas para distintas aplicaciones submarinas, teniendo en cuenta las limitaciones de alcance, velocidad de transmisión y latencia.
+Los valores obtenidos son estimaciones de un modelo simplificado y dependen de los parámetros utilizados.
 
 ## 8. Estado del proyecto
 
-Proyecto en desarrollo.
+Modelo implementado y analizado. Los scripts y la documentación del proyecto están disponibles en este repositorio.
 
 ## 9. Referencias iniciales
 
@@ -91,13 +87,3 @@ py src\plot_snr.py
 py src\plot_capacity.py
 py src\propagation_delay.py
 py src\modulation_comparison.py
-
-Then save it with **Ctrl + S** and run:
-
-```bat
-git add README.md
-git commit -m "Add instructions to run project scripts"
-git push
-
-**Máster en Vehículos Autónomos (MuVA)**  
-Proyecto individual – M4
