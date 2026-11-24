@@ -60,7 +60,7 @@ def main():
     plt.title("Ideal Data Rate at the Same Symbol Rate")
     plt.grid(axis="y", alpha=0.3)
     plt.tight_layout()
-    plt.savefig("modulation_comparison.png", dpi=300)
+    plt.savefig("docs/modulation_comparison.png", dpi=300)
     plt.show()
 
 
