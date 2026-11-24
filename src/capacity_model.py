@@ -1,3 +1,4 @@
+import math
 from noise_snr import calculate_snr
 
 # Temporary assumption for the first test: 1 kHz bandwidth.
@@ -11,9 +12,7 @@ FREQUENCIES_KHZ = [5, 10, 20, 30]
 def shannon_capacity(snr_db, bandwidth_hz):
     """Calculate theoretical Shannon capacity in bits per second."""
     snr_linear = 10 ** (snr_db / 10)
-    return bandwidth_hz * __import__("math").log2(1 + snr_linear)
-
-
+    return bandwidth_hz * math.log2(1 + snr_linear)
 if __name__ == "__main__":
     print(f"Theoretical capacity (bps), bandwidth = {BANDWIDTH_HZ} Hz")
     print("Distance (km) | " + " | ".join(
