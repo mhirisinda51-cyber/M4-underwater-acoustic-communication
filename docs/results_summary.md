@@ -52,3 +52,21 @@ Estos son resultados preliminares basados en hipótesis simplificadas. Antes de 
 
 El siguiente paso consiste en comparar el modelo con las especificaciones publicadas de módems acústicos comerciales, utilizando condiciones de funcionamiento comparables.
 
+\## 6. Comparación ilustrativa de modulaciones
+
+
+
+Se compararon BPSK, QPSK y 16-QAM con un ancho de banda supuesto de 1.000 Hz. El modelo considera una tasa de símbolos igual al ancho de banda y utiliza umbrales aproximados de Eb/N₀ para estimar si cada modulación puede funcionar con la SNR calculada.
+
+
+
+En estas condiciones, las tasas ideales estimadas son de 1.000 bps para BPSK, 2.000 bps para QPSK y 4.000 bps para 16-QAM cuando se alcanza el umbral requerido. Si la SNR queda por debajo del umbral, el modelo asigna una tasa de 0 bps.
+
+
+
+Los resultados muestran el compromiso entre tasa de datos y robustez: las modulaciones de orden superior pueden transmitir más bits por símbolo, pero requieren una SNR mayor. Por ejemplo, a 5 km y 30 kHz, el modelo permite BPSK y QPSK, pero no 16-QAM. A 10 km y 20 kHz, ninguna de las tres modulaciones alcanza su umbral.
+
+
+
+Estos resultados son ilustrativos, no velocidades garantizadas. Los umbrales son aproximaciones para un canal AWGN y una BER objetivo cercana a 10⁻⁵; no representan especificaciones de un módem submarino comercial.
+
