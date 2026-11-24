@@ -1,5 +1,9 @@
-# M4 – Comunicación acústica submarina para AUV y ROV
+# Underwater Acoustic Communication for AUVs and ROVs
 
+![Underwater ROV](docs/images/rov.jpg)
+
+A Python model for studying underwater acoustic communication,
+including transmission loss, SNR, theoretical capacity, and modulation.
 ## 1. Introducción
 
 La comunicación es uno de los aspectos más importantes en el desarrollo de vehículos submarinos, tanto autónomos (AUV) como operados remotamente (ROV). Permite transmitir información entre el vehículo y la estación de superficie, como datos de sensores, información de navegación y órdenes de control.
