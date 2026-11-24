@@ -64,3 +64,17 @@ Sources:
 
 &#x20; model is incorrect.
 
+\## Preliminary comparison with the current model
+
+
+
+The current model estimates theoretical capacity using a fixed bandwidth of 1 kHz and illustrative source and noise levels. The commercial modem specifications listed above report data rates and ranges under their own operating conditions.
+
+
+
+The model frequencies of 10 kHz and 20 kHz fall within the published LF and MF bands of the Teledyne Benthos ATM series, respectively. However, the available specifications do not provide enough matching information about bandwidth, source level, noise, and operating conditions to make a direct numerical comparison.
+
+
+
+Therefore, this comparison is qualitative at this stage. A quantitative validation requires matching the model inputs to the operating conditions of a specific modem.
+
